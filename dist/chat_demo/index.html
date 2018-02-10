@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AUI Chat</title>
+    <script src="https://cdn.bootcss.com/es6-shim/0.35.3/es6-shim.min.js"></script>
+    <script src="https://cdn.bootcss.com/dom4/1.8.5/dom4.js"></script>
+    <!-- <script src="//at.alicdn.com/t/font_55657_eqsytsajlmvg3nmi.js"></script> -->
+    <style> 
+        html {
+            overflow-y: hidden;
+        }
+    </style>
+    <script>
+    window.globalServerAddress = '192.168.31.111';
+    </script>
+<link href="static/css/chat-index-aefbe383.css" rel="stylesheet"></head>
+<body>  
+    <div id="application">
+        <div id="app" class="b-app">
+            <header class="b-app-chat-user-list__header" b-app-header>
+                <div class="aui-media app-user-card-media" style="width: 300px; padding: 0 10px;">
+                    <div class="aui-layout aui-layout-grid">
+                        <div class="aui-layout__item">
+                            <img class="b-app-rounded-circle app-user-card-media__logo" 
+                                src="https://static.zhilizhili.com/static/3828461873613813290.jpg">
+                        </div>
+                        <div class="aui-layout__item aui-media__body">
+                            <div class="app-user-card-media__title"  v-html="header"></div>
+                            <div class="app-user-card-media__content"><app-download ref="download"></app-download></div>
+                        </div>
+                    </div>
+                </div>                
+            </header>
+            <main>                
+                <div class="aui-easy-grid aui-full-height">
+                    <div class="aui-layout aui-layout-grid aui-full-height">
+                        <div class="aui-layout__item"                       
+                        b-app-content>
+                            <div class="aui-layout aui-full-height aui-full-width">
+                                <div class="aui-layout__item aui-full-width" style="margin-left: 0; height: 100%;">
+                                    <div class="aui-full-height">
+                                        <div ref="messages" class="aui-full-height custom-scrollview b-app-messages" style="width: 100%; ">                                    
+                                            
+                                            <b-app-message
+                                                :ref = "message.ref"
+                                                v-for=" message in messages "
+                                                :data='message'
+                                            ></b-app-message>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aui-layout__item aui-full-width editorarea">
+                                    <div class="aui-full-height">
+                                        <input id="globalfilesent" type="file">
+                                        <button type="button" @click="handleFileSent">sent file</button>
+                                        <app-editor ref="appeditor">
+                                            <!-- <div class="aui-display-inline-block" slot="toolbar">
+                                                <input id="inputFile" type="file">
+                                                <button id="startTransfer" type="button">startTransfer</button>                                  
+                                            </div> -->
+                                        </app-editor>
+                                        <button class="aui-button aui-button--default" type="button" 
+                                        style="position: absolute; right: 10px; bottom: 10px;"
+                                        @click="sendMessage" >submit</button>                                                         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                                   
+                </div>
+            </main>
+            <div b-app-aside>
+                <div class="b-app-chat-user-list aui-full-height">
+                    <main class="clusterize b-app-chat-user-list__content">
+                        <div id="scrollArea" class="clusterize-scroll">
+                            <div id="contentArea" class="clusterize-content">
+                                <div class="clusterize-no-data"></div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>                 
+        </div>
+        <div class="my-file-popper" style="position: absoulte; left: 0; top: 0; opacity: 0; transform: translateX(-100%)"><app-filesent ref="filesent" @sendfile="handleFileSent" ></app-filesent></div>        
+    </div>      
+    <script src="https://cdn.zhilizhili.com/extension.js"></script>                
+    <script>
+        if (window.AUINavigator.getQueryVariable("multi") != window.AUINavigator.url.NOT_FOUND) {
+            document.getElementById("app").classList.add("b-app--multi")
+        }
+    </script>
+    <script src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <!-- built files will be auto injected -->
+<script type="text/javascript" src="static/js/chat-index.aefbe38327f2f1a47a73.js"></script></body>
+</html>

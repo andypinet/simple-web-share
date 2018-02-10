@@ -1,0 +1,28 @@
+{
+  "name": "simple-file-share",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andypinet/simple-file-share.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andypinet/simple-file-share/issues"
+  },
+  "homepage": "https://github.com/andypinet/simple-file-share#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "file-type": "^7.5.0",
+    "lodash": "^4.17.5",
+    "morgan": "^1.9.0",
+    "pouchdb": "^6.4.3",
+    "socket.io": "^2.0.4",
+    "ws": "^4.0.0"
+  }
+}
