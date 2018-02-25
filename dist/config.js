@@ -1,0 +1,1 @@
+window.globalServerAddress = '192.168.31.111';

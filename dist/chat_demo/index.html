@@ -14,10 +14,8 @@
             overflow-y: hidden;
         }
     </style>
-    <script>
-    window.globalServerAddress = '192.168.10.151';
-    </script>
-<link href="static/css/chat-index-aefbe383.css" rel="stylesheet"></head>
+    <script src="../config.js"></script>
+<link href="static/css/chat-index-97f29bd6.css" rel="stylesheet"></head>
 <body>  
     <div id="application">
         <div id="app" class="b-app">
@@ -56,14 +54,11 @@
                                 </div>
                                 <div class="aui-layout__item aui-full-width editorarea">
                                     <div class="aui-full-height">
-                                        <input id="globalfilesent" type="file">
-                                        <button type="button" @click="handleFileSent">sent file</button>
-                                        <app-editor ref="appeditor">
-                                            <!-- <div class="aui-display-inline-block" slot="toolbar">
-                                                <input id="inputFile" type="file">
-                                                <button id="startTransfer" type="button">startTransfer</button>                                  
-                                            </div> -->
-                                        </app-editor>
+                                        <div id="editortoolbar">
+                                            <input id="globalfilesent" type="file">
+                                            <button type="button" @click="handleFileSent">sent file</button>
+                                        </div>
+                                        <textarea ref="talkarea" class="b-app-talkarea" v-model="talkarea"></textarea>
                                         <button class="aui-button aui-button--default" type="button" 
                                         style="position: absolute; right: 10px; bottom: 10px;"
                                         @click="sendMessage" >submit</button>                                                         
@@ -97,5 +92,5 @@
     <script src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
     <!-- built files will be auto injected -->
-<script type="text/javascript" src="static/js/chat-index.aefbe38327f2f1a47a73.js"></script></body>
+<script type="text/javascript" src="static/js/chat-index.97f29bd654acfbfd318b.js"></script></body>
 </html>
